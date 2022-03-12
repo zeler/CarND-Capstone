@@ -88,6 +88,24 @@ Specific to these libraries, the simulator grader and Carla use the following:
 
 We are working on a fix to line up the OpenCV versions between the two.
 
+# Discussion
 
-### Updating the instructions
-Feel free to submit PRs or issues should you see a scope for improvement.
+The code in this project is implemented in following classes. The code is based on and follows closely the instruction videos for this project provided by Udacity. 
+
+## twist_constroller/dbw_node.py
+  
+This class is responsible for publishing of appropriate brake, throttle and steering commands. Commands are published to following topics:
+
+  - /vehicle/throttle_cmd
+  - /vehicle/brake_cmd
+  - /vehicle/steering_cmd
+
+The class responsible for actual calculation of these values, is called *twist_controller/twist_controller.py*. To calculate throttle, we use PID controller provided in the repository. To calculate steering, we use Yaw controller, provided in the repository as well. Finally, to calculate current velocity, we use low pass filter, provided in the repository as well. 
+
+## waypoint_updater/waypoint_updater.py
+
+This class publishes waypoints for the vehicle to navigate around the track. To do this, it publishes commands to following topics:
+
+   - /final_waypoints
+
+This class also takes into consideration traffic light waypoints published to */traffic_waypoint* topic. 

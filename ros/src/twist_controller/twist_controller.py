@@ -57,8 +57,8 @@ class Controller(object):
             throttle = 0
             decel = max(vel_error, self.decel_limit)
 
-            rospy.logwarn(str(vel_error) + " " + str(self.decel_limit))
-            rospy.logwarn(decel)
+           # rospy.logwarn(str(vel_error) + " " + str(self.decel_limit))
+           # rospy.logwarn(decel)
 
             brake = abs(decel) * self.vehicle_mass * self.wheel_radius # caluclating torque
 
