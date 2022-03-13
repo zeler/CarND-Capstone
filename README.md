@@ -90,7 +90,7 @@ We are working on a fix to line up the OpenCV versions between the two.
 
 # Discussion
 
-The code in this project is implemented in following classes. The code is based on and follows closely the instruction videos for this project provided by Udacity. 
+The code in this project is implemented in following classes.
 
 ## twist_constroller/dbw_node.py
   
@@ -109,3 +109,7 @@ This class publishes waypoints for the vehicle to navigate around the track. To 
    - /final_waypoints
 
 This class also takes into consideration traffic light waypoints published to */traffic_waypoint* topic. 
+
+# DISCLAIMER
+
+ The code in this repository is based on and follows closely the project instruction videos [FAQ] for provided by Udacity. 
